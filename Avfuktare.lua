@@ -10,6 +10,7 @@
 --Om luftfuktighet är över 66.0%, Starta avfuktare
 --Om luftfuktighet är under 64.0%, Stoppa avfuktare
         
+        if fibaro:countScenes() > 1 then fibaro:abort(); end
 	local humidity = fibaro:getValue(19, "ui.Label1.value")
 	local humStart = "66" --Starta avfuktare om över %
 	local humStopp = "64" --Stoppa avfuktaren om under %
